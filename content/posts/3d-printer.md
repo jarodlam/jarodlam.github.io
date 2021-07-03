@@ -2,11 +2,13 @@
 title: "3D printer"
 date: 2016-10-10T00:27:00+10:00
 draft: false
+summary: A 3D printer built from scratch for a year 12 high school project.
 ---
+![3D printer](/static/3d-printer/3d-printer.jpg)
 
 A 3D printer is as expensive as you make it--my goal was to make a cheap, reasonably-sized 3D printer that I could use at home.
 
-The maximum build volume of the printer is 200 mm x 200 mm x 150 mm. It's controlled by a [RAMPS 1.4](http://reprap.org/wiki/RAMPS_1.4) board with a [RepRapDiscount Full Graphic Smart Controller](http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller) attached for screen and SD card functionality. An ATX power supply from an old PC was used as the power source.
+The maximum build volume of the printer is 200 mm x 200 mm x 150 mm. It's based on the Prusa i3 and controlled by a [RAMPS 1.4](http://reprap.org/wiki/RAMPS_1.4) board with a [RepRapDiscount Full Graphic Smart Controller](http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller) attached for screen and SD card functionality. An ATX power supply from an old PC was used as the power source.
 
 ## The frame
 The original version of this printer is designed to use as little panel parts as possible, opting for 3D-printed parts instead, adhering to the RepRap philosophy. But since I had access to a laser cutter I tried to replace as many of the 3D printed parts as I could.
