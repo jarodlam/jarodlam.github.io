@@ -16,12 +16,12 @@ Then, commit changes to GitHub:
 cd public
 git add .
 git commit -m "Commit message"
-git push origin main
+git push origin master
 
 cd ..
 git add .
 git commit -m "Commit message"
-git push origin main
+git push origin master
 ```
 
 ## Setup
