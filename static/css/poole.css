@@ -325,6 +325,12 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 1rem;
   color: #757575;
 }
+.post-thumbnail {
+  float: right;
+  width: 200px;
+  height: 200px;
+  object-fit:cover;
+}
 
 /* Related posts */
 .related {
