@@ -1,6 +1,7 @@
 baseURL = "https://jarodl.am/"
 languageCode = "en-us"
 title = "Jarod Lam"
+theme = "hyde"
 
 [Menus]
   main = [

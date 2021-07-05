@@ -25,9 +25,11 @@ git push origin master
 ```
 
 ## Setup
-If things ever mess up, try re-adding the submodule:
+If things ever mess up, try re-adding the submodules:
 ```
 git rm public
 rm -rf .git/modules/public
 git submodule add -b master https://github.com/jarodlam/jarodlam.github.io.git public
 ```
+
+Also can repeat the same thing for the hyde theme submodule.
