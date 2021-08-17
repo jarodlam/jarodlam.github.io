@@ -2,6 +2,7 @@ baseURL = "https://jarodl.am/"
 languageCode = "en-us"
 title = "Jarod Lam"
 theme = "hyde"
+googleAnalytics = 'G-R6G6TM3LWM'
 
 [Menus]
   main = [

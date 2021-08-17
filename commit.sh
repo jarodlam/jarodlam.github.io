@@ -5,12 +5,23 @@ if [ $# -eq 0 ]
     exit 1
 fi
 
+commit_currrent_dir() {
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+
+ROOTDIR=$PWD
 set -x
 
-git submodule foreach git add .
-git submodule foreach git commit -m "$1"
-git submodule foreach git push origin master
+cd public
+commit_currrent_dir $1
 
-git add .
-git commit -m "$1"
-git push origin master
+cd $ROOTDIR
+
+cd themes/hyde
+commit_currrent_dir $1
+
+cd $ROOTDIR
+
+commit_currrent_dir $1
