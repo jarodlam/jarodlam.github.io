@@ -6,10 +6,11 @@ googleAnalytics = "G-R6G6TM3LWM"
 
 [Menus]
   main = [
-      {Name = "Github", URL = "https://github.com/jarodlam/"},
+      {Name = "GitHub", URL = "https://github.com/jarodlam/"},
       {Name = "LinkedIn", URL = "https://www.linkedin.com/in/jarod-lam/"}
   ]
 
 [params]
   description = " "
   themeColor = "theme-base-0c"
+  copyright = " "

@@ -2,7 +2,7 @@
 title: "Petrol price cycle notifier"
 date: 2021-08-18T12:00:00+10:00
 draft: false
-summary: An automatic script that checks the ACC's petrol price cycles website and sends an email notification if the price cycle stage has changed. 
+summary: An automatic script that checks the ACCC's petrol price cycles website and sends an email notification if the price cycle stage has changed. 
 ---
 
 <!--
@@ -13,9 +13,9 @@ In the past, when the cycle was at its lowest point, I would check this website 
 This process was ripe for automation. I used [Google Apps Script](https://script.google.com), Google's JavaScript-powered cloud automation tool, to periodically crawl the ACCC price cycle web page and send me an email if the cycle status has changed to "increasing" or "decreasing". The email looks like this:
 -->
 
-As a poor uni student, I used to check the [ACC petrol price cycle web page](https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles) almost daily. As soon as it seemed like prices were rising, I would rush to the nearest discount petrol station, determined to squeeze every drop of bargain fuel I could fit into my tank, tiding me over for the next month while prices creeped down.
+As a poor uni student, I used to check the [ACCC petrol price cycle web page](https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles) almost daily. The moment it seemed like prices were rising, I would rush to the nearest discount petrol station, determined to fit every drop of bargain fuel I could into my petrol tank to tide me over for the next month while prices creeped down.
 
-The web page shows a graph of current average petrol cycles along with a text "buying tip" indicating if prices are *increasing*, *decreasing*, at the *highest point* in the cycle, or the *lowest point* in the cycle:
+The web page shows a graph of current average petrol cycles along with a text-based "buying tip" indicating if prices are *increasing*, *decreasing*, at the *highest point* in the cycle, or the *lowest point* in the cycle:
 
 ![ACCC website](accc-website.png)
 
@@ -70,7 +70,7 @@ MailApp.sendEmail({
 <p>This is an automated email.</p>\
 <p>Brisbane petrol prices are now <b>" + (isIncreasing ? "INCREASING" : "DECREASING") + "</b>. \
 More information <a href='https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles#petrol-prices-in-brisbane'>here</a>.</p>\
-<img src='https://www.accc.gov.au/sites/www.accc.gov.au/files/fuelwatch/brisbane-ulp.png' style='max-width:100%'>\
+<img src='https://www.src.gov.au/sites/www.accc.gov.au/files/fuelwatch/brisbane-ulp.png' style='max-width:100%'>\
 </body></html>"
 });
 {{< /highlight >}}
