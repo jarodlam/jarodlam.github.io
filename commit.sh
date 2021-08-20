@@ -8,7 +8,7 @@ fi
 commit_currrent_dir() {
   git add .
   git commit -m "$1"
-  git push origin master
+  git push -f origin master
 }
 
 ROOTDIR=$PWD
