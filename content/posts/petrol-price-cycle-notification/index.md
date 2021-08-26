@@ -5,15 +5,7 @@ draft: false
 summary: An automatic script that checks the ACCC's petrol price cycles website and sends an email notification if the price cycle stage has changed. 
 ---
 
-<!--
-You may be vaguely aware of petrol price cycles in your Australian capital city, but did you know that the ACCC publishes detailed, regularly-updated [petrol price cycle stats](https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles)? This website has saved me hundreds of dollars over the past 5 years of my driving life.
-
-In the past, when the cycle was at its lowest point, I would check this website daily in anticipation of its inevitable rise to price-gouging levels. As soon as I'd see the graph shoot up, I would rush to the nearest discount petrol station, determined to squeeze every drop of bargain fuel I could fit into my tank, tiding me over for the next month while prices creeped down--such is the poor uni student life.
-
-This process was ripe for automation. I used [Google Apps Script](https://script.google.com), Google's JavaScript-powered cloud automation tool, to periodically crawl the ACCC price cycle web page and send me an email if the cycle status has changed to "increasing" or "decreasing". The email looks like this:
--->
-
-As a poor uni student, I used to check the [ACCC petrol price cycle web page](https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles) almost daily. The moment it seemed like prices were rising, I would rush to the nearest discount petrol station, determined to fit every drop of bargain fuel I could into my petrol tank to tide me over for the next month while prices creeped down.
+I used to check the [ACCC petrol price cycle web page](https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles) almost daily as a poor uni student. The moment it seemed like prices were rising, I would rush to the nearest discount petrol station, determined to fit every drop of bargain fuel I could into my petrol tank to tide me over for the next month while prices creeped down.
 
 The web page shows a graph of current average petrol cycles along with a text-based "buying tip" indicating if prices are *increasing*, *decreasing*, at the *highest point* in the cycle, or the *lowest point* in the cycle:
 
