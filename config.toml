@@ -5,12 +5,14 @@ theme = "hyde"
 googleAnalytics = "G-R6G6TM3LWM"
 
 [Menus]
-  main = [
-      {Name = "GitHub", URL = "https://github.com/jarodlam/"},
-      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/jarod-lam/"}
-  ]
+#  main = [
+#      {Name = "GitHub", URL = "https://github.com/jarodlam/"},
+#      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/jarod-lam/"}
+#  ]
 
 [params]
   description = " "
   themeColor = "theme-base-0c"
   copyright = " "
+  github = "https://github.com/jarodlam/"
+  linkedin = "https://www.linkedin.com/in/jarod-lam/"
