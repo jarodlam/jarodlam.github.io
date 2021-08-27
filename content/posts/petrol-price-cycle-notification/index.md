@@ -23,24 +23,24 @@ Source code is available on [GitHub](https://github.com/jarodlam/petrol-price-cy
 Google Apps Script gives the ability to schedule a JavaScript function that runs on Google's servers at a specified time interval. I've set my function to run once an hour.
 
 We start by loading the ACCC page and storing the raw HTML source:
-{{< highlight JavaScript "linenos=inline,linenostart=3" >}}
+{{< highlight JavaScript "linenos=table, linenostart=3" >}}
 var text = UrlFetchApp.fetch("https://www.accc.gov.au/consumers/petrol-diesel-lpg/petrol-price-cycles").getContentText();
 {{< /highlight >}}
 
 Then, a regular expression is used to to extract the Brisbane section of the page:
-{{< highlight JavaScript "linenos=inline,linenostart=6" >}}
+{{< highlight JavaScript "linenos=table, linenostart=6" >}}
 var regExp = new RegExp(/(Petrol prices in Brisbane<\/h2>)([\S\s]*?)(<\/ul>)/);
 var matchedText = regExp.exec(text);
 {{< /highlight >}}
 
 The matched text is searched for the string `"increasing"`. We assume that if prices are not increasing, they are decreasing. I only really want to be notified when prices begin to increase so I can buy petrol just before they shoot up. 
-{{< highlight JavaScript "linenos=inline,linenostart=15" >}}
+{{< highlight JavaScript "linenos=table, linenostart=15" >}}
 var isIncreasing = matchedText[0].includes("increasing");
 {{< /highlight >}}
 
 I also only want to be notified when the state changes, not every time the script runs. We therefore need to be able to check the state from the previous run. To do this, I use Google Apps Script's `PropertiesService` class, which can store persistent key-value pairs. A property called `isIncreasing` is set to `"increasing"` or `"decreasing"` depending on the current state. The current state is compared to the previous state and terminates execution if they have not changed.
 
-{{< highlight JavaScript "linenos=inline,linenostart=18" >}}
+{{< highlight JavaScript "linenos=table, linenostart=18" >}}
 var properties = PropertiesService.getScriptProperties();
 var prevIsIncreasing = properties.getProperty("prevIsIncreasing");
 properties.setProperty("prevIsIncreasing", isIncreasing);
@@ -52,10 +52,9 @@ if (isIncreasing.toString() == prevIsIncreasing) {
 
 Finally, an email is sent if the state has changed. The Google Apps Script `MailApp` class provides an interface to send email directly from the currently logged in Gmail account.
 
-{{< highlight JavaScript "linenos=inline,linenostart=18" >}}
+{{< highlight JavaScript "linenos=table, linenostart=27" >}}
 MailApp.sendEmail({
-  bcc: "jlam96@gmail.com,lamc67@gmail.com,winnie.lam6@gmail.com,seohyun9702@gmail.com",
-  //bcc: "jlam96@gmail.com",
+  bcc: "example@gmail.com",
   subject: "Petrol prices " + (isIncreasing ? "INCREASING!" : "decreasing"),
   htmlBody: "\
 <!doctype html><html><body>\
