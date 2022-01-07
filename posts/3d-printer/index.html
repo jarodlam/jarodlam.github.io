@@ -1,0 +1,82 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us>
+<head>
+<link href=https://gmpg.org/xfn/11 rel=profile>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.91.2">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>3D printer &#183; jarodl.am</title>
+<meta name=description content>
+<link type=text/css rel=stylesheet href=https://jarodl.am/css/print.css media=print>
+<link type=text/css rel=stylesheet href=https://jarodl.am/css/syntax.css>
+<link type=text/css rel=stylesheet href=https://jarodl.am/css/hyde.css>
+<link type=text/css rel=stylesheet href=https://jarodl.am/css/overrides.css>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/favicon.png>
+<meta name=theme-color content="#75b5aa">
+</head>
+<body class=theme-base-0c>
+<aside class=sidebar>
+<div class="container sidebar-sticky">
+<div class=sidebar-about>
+<a href=https://jarodl.am/><h1>jarodl.am</h1></a>
+<p class=lead>
+Personal projects and more by Jarod Lam.
+</p>
+</div>
+<nav>
+<ul class=sidebar-nav>
+</ul>
+<ul class=sidebar-socials>
+<li><a href=https://github.com/jarodlam/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a>
+<li><a href=https://www.linkedin.com/in/jarod-lam/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</a>
+</ul>
+</nav>
+</div>
+</aside>
+<main class="content container">
+<div class=post>
+<h1>3D printer</h1>
+<time datetime=2016-10-10T00:27:00+1000 class=post-date>Mon, Oct 10, 2016</time>
+<img src=/posts/3d-printer/cover.jpg>
+<p>A 3D printer is as expensive as you make it&ndash;my goal was to make a cheap, reasonably-sized 3D printer that I could use at home.</p>
+<p>The maximum build volume of the printer is 200 mm x 200 mm x 150 mm. It&rsquo;s based on the Prusa i3 and controlled by a <a href=http://reprap.org/wiki/RAMPS_1.4>RAMPS 1.4</a> board with a <a href=http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller>RepRapDiscount Full Graphic Smart Controller</a> attached for screen and SD card functionality. An ATX power supply from an old PC was used as the power source.</p>
+<h2 id=the-frame>The frame</h2>
+<p>The original version of this printer is designed to use as little panel parts as possible, opting for 3D-printed parts instead, adhering to the RepRap philosophy. But since I had access to a laser cutter I tried to replace as many of the 3D printed parts as I could.</p>
+<p>As such, parts such as the stepper motor mounts, power supply enclosure, y-axis front and back, and the y-idler, are all laser-cut out of 6 mm ply. This is in addition to the main vertical frame and the print bed mount. Laser cutting files can be cound at the bottom of the page.</p>
+<p>Using laser-cut parts greatly sped up production time as 3D printing is a very slow process, added onto the fact that I was sharing printer time with other pupils. There is no glue used in the construction of the frame as it instead uses captive T-slot nuts to assemble the pieces.</p>
+<p><img src=1.jpg alt=Frame></p>
+<h2 id=motion-mechanisms>Motion mechanisms</h2>
+<p>There are two mechanisms used to convert the stepper motor circular motion into linear motion. For the x- and y-axes, a GT2 timing belt is attached to the stepper motor and the moving mass (extruder and print bed). The motor shaft has a pulley fixed to it in order to move the belt with precision. On the opposite side of each axis there is a linear bearing to support the belt.</p>
+<p><img src=2.jpg alt="Vertical slider"></p>
+<p>To attach the mass to the belt, the belt is looped around a 3D printed part and zip-tied in place. Due to the shape of the belt, this is sufficient to hold it very securely in place. It should be noted that the belt is only for transferring motion; the actual mass is supported by linear bearings running along smooth stainless steel rods.</p>
+<p><img src=3.jpg alt="Horizontal slider"></p>
+<p>For the z-axis where precision is more important than speed, the motor shaft is coupled to a 5 mm threaded rod. M5 nuts are embedded into the 3D printed parts that comprise the z-axis, allowing the z-axis to move via screw action.</p>
+<p><img src=4.jpg alt="Z axis"></p>
+<h2 id=the-extruder>The extruder</h2>
+<p>The extruder is the section that melts the plastic filament and deposits it onto the print bed. It can be split up into two halves.</p>
+<p>The top half comprises the carriage mount that attaches it to the two horizontal steel rods, a stepper motor that feeds the filament at a controlled rate, and a guide that directs the filament downward. It also features a spring-loaded mechanism to easily remove and swap filaments.</p>
+<p><img src=5.jpg alt="Extruder side"></p>
+<p>The bottom half is the hotend. The one I&rsquo;m using is a cheap clone of the <a href=https://wiki.e3d-online.com/wiki/E3D-v5_Documentation>E3D V5</a>. There are two fans on the hotend: one cools the plastic as it prints and the other siphons heat from the heatsink before it can reach the upper plastic portion of the extruder. I&rsquo;ve only ever tried printing PLA plastic with this printer, but in theory it should work with ABS too.</p>
+<p><img src=6.jpg alt="Extruder bottom"></p>
+<h2 id=the-print-bed>The print bed</h2>
+<p>The print bed is a fairly standard <a href=http://reprap.org/wiki/PCB_Heatbed>PCB Heatbed</a>. It&rsquo;s attached on top of a mount that runs along two steel rods using linear bearings and is pulled along by a GT2 timing belt.</p>
+<p>A piece of borosilicate glass is clipped to the top of the heatbed. I&rsquo;ve tried a number of different bed adhesion techniques including Kapton tape, glue and hairspray, but I&rsquo;ve found that masking tape does the best job of keeping parts stuck down without making them impossible to remove.</p>
+<p><img src=7.jpg alt="Print bed"></p>
+<h2 id=the-electronics>The electronics</h2>
+<p>An ATX power supply powers the entire setup. It is encased within a laser-cut enclosure behind teh right side of the frame. A hole in the top gives access to the mains plug and power switch. To break out the 12V and GND lines I mutilated an ATX power cord and bundled the related wires together. The remaining wires are tucked away in a small section underneath the power supply.</p>
+<p><img src=8.jpg alt="Power supply box"></p>
+<p>The RAMPS 1.4 board is mounted on the left side of the 3D printer. The power supply cables go underneath the printer and come out through a hole at the bottom of the left panel. Here, it joins the messy jumble of wires at include cables for the endstops, heated bed, stepper motors and thermistors all joining up to the controller board.</p>
+<p><img src=9.jpg alt="Side electronics"></p>
+<p>The screen is a <a href=http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller>RepRapDiscount Full Graphic Smart Controller</a> which attaches to the RAMPS board via two ribbon cables. In addition to a controller knob and a piezo buzzer, it has an SD card slot on the side that allows printing without a computer. As I often leave the printer running when I&rsquo;m out of the house, this has provend itself to be an indispensable feature.</p>
+<p><img src=10.jpg alt=Screen></p>
+<h2 id=final-comments>Final comments</h2>
+<p>This writeup glosses over a lot of stuff about the printer but I hope it&rsquo;s enough to give a basic overview. I found that what matters most in 3D printing is not so much the components you use (though that helps a lot), but the countless hours taken to adjust and refine the methods, settings and materials used. The slicer also makes a huge difference&ndash;I&rsquo;m using <a href=http://simplify3d.com>Simplify3D</a>.</p>
+<p>Having a 3D printer has been more fun and useful than I could have expected. Once you get into the mindset that everything can be solved with a 3D printer, the opportunities are endless&ndash;from table leg extensions and <a href=http://thingiverse.com/thing:431506>3D printer parts</a> to <a href=http://thingiverse.com/thing:1276837>Eiffel Towers</a> and <a href=http://thingiverse.com/thing:17455>kazoos</a>. You can do it all with a 3D printer.</p>
+</div>
+</main>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6G6TM3LWM"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-R6G6TM3LWM',{anonymize_ip:!1})}</script>
+</body>
+</html>
